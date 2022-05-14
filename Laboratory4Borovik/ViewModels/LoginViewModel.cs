@@ -61,15 +61,11 @@ namespace Laboratory4Borovik.ViewModels
         {
             this.gotoInfo = gotoInfo;
         }
+
         private void Cancel()
         {
             gotoInfo.Invoke();
         }
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private async Task Proceed()
         {
             bool isAdult;

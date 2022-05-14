@@ -134,7 +134,7 @@ namespace Laboratory4Borovik.ViewModels
         {
             People = new ObservableCollection<RedactorViewModel>(people.OrderBy(person => person.Email).ToList());
             GridPeople = new ObservableCollection<RedactorViewModel>(gridPeople.OrderBy(person => person.Email).ToList());
-            //OnPropertyChanged(nameof(people));
+            
         }
         private void FilterPeople()
         {
@@ -146,7 +146,7 @@ namespace Laboratory4Borovik.ViewModels
         }
         private void CancelFilter()
         {
-            GridPeople = new ObservableCollection<RedactorViewModel>(people);
+            GridPeople = new ObservableCollection<RedactorViewModel>(People);
             filtered = false;
         }
         private void GotoLogin()
@@ -171,7 +171,9 @@ namespace Laboratory4Borovik.ViewModels
             {
                 await Task.Run(() => personFileRepository.RemoveFromRepository(SelectedPerson.Person));
                 People.Remove(SelectedPerson);
+                OnPropertyChanged(nameof(people));
                 GridPeople.Remove(SelectedPerson);
+                OnPropertyChanged(nameof(gridPeople));
             }
         }
         private bool CanExecute(object o)
