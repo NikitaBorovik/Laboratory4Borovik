@@ -14,8 +14,6 @@ namespace Laboratory4Borovik.Navigation
     
     internal abstract class BaseNavigationViewModel : INotifyPropertyChanged
     {
-        private static int _freeid = 0;
-        private int _myid = 0;
         private INavigatable viewModel;
         List<INavigatable> viewModels = new List<INavigatable>();
 
@@ -79,6 +77,6 @@ namespace Laboratory4Borovik.Navigation
     {
         Login,
         Info,
-        PersonChanger,
+        Redactor,
     }
 }

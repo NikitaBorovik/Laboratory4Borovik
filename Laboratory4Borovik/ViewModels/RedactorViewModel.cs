@@ -23,7 +23,7 @@ namespace Laboratory4Borovik.ViewModels
         private DateTime changedBirthday = DateTime.Today;
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public NavigationTypes ViewType => NavigationTypes.PersonChanger;
+        public NavigationTypes ViewType => NavigationTypes.Redactor;
 
         public Person Person
         {
