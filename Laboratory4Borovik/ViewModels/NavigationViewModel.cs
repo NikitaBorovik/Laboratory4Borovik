@@ -26,7 +26,7 @@ namespace Laboratory4Borovik.ViewModels
                 case NavigationTypes.Login:
                     return new LoginViewModel(() => Navigate(NavigationTypes.Info));
                 case NavigationTypes.Info:
-                    return new InfoViewModel(() => Navigate(NavigationTypes.Login), person => NavigateToPerson(person), () => Navigate(NavigationTypes.Info));
+                    return new InfoViewModel(() => Navigate(NavigationTypes.Login), person => NavigateToRedactor(person), () => Navigate(NavigationTypes.Info));
                 default:
                     return null;
             }

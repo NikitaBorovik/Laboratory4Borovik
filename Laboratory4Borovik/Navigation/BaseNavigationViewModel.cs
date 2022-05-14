@@ -32,7 +32,7 @@ namespace Laboratory4Borovik.Navigation
                 OnPropertyChanged(nameof(ViewModel));
             }
         }
-        internal void NavigateToPerson(RedactorViewModel viewMdel)
+        internal void NavigateToRedactor(RedactorViewModel viewMdel)
         {
             ViewModel = viewMdel;
         }
